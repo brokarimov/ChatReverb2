@@ -31,7 +31,8 @@ class MessageEvent implements ShouldBroadcast
     public function broadcastOn(): array
     {
         return [
-            new Channel('message'),
+            new Channel('message.' . $this->message->chat_id),
         ];
     }
+    
 }
